@@ -8,6 +8,9 @@ game is to find the one image that is different from the others.
 
 "use strict";
 
+let state = `start`;
+// Could be start, simulation, success, failure
+
 const NUM_FRUIT_IMAGES = 10;
 const NUM_FRUITS = 100;
 
@@ -17,11 +20,21 @@ let fruits = [];
 let pizzaImage = undefined;
 let pizza = undefined;
 
+// Declaring images for start, failure and success states
+let startImage;
+let failureImage;
+let successImage;
+
 
 /**
 Description of preload
 */
 function preload() {
+// Loading all state images
+startImage = loadImage("assets/images/start.png");
+failureImage = loadImage("assets/images/failure.png");
+successImage = loadImage("assets/images/success.jpg");
+
   for (let i = 0; i < NUM_FRUIT_IMAGES; i++) {
       let fruitImage = loadImage(`assets/images/fruit${i}.png`)
       fruitImages.push(fruitImage);
@@ -57,6 +70,15 @@ function setup() {
 Description of draw()
 */
 function draw() {
+  if (state === `start`) {
+    start();
+  } else if (state === `simulation`) {
+    simulation();
+  } else if (state === `failure`) {
+    failure();
+  } else if (state === `success`) {
+    success();
+  }
   // Light blue background
   background(52, 225, 235);
 
