@@ -1,9 +1,9 @@
 /**
-Title of Project
-Author Name
+Where's Sausage Dog?
+Jessika Forster
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Exercise to remember JavaScript, p5.js and to enjoy programming! The goal of my
+game is to find the one image that is different from the others.
 */
 
 "use strict";
@@ -21,7 +21,8 @@ function preload() {
 Description of setup
 */
 function setup() {
-
+  // Game will fill entire window
+  createCanvas(windowWidth, windowHeight);
 }
 
 
@@ -29,5 +30,6 @@ function setup() {
 Description of draw()
 */
 function draw() {
-
+  // Light blue background
+  background(52, 225, 235);
 }
