@@ -1,18 +1,22 @@
 class Pizza extends Fruit {
   constructor(x, y, image) {
     super(x, y, image);
-
+    this.speed = 10;
     this.found = false;
-    this.rotationSpeed = 0.25;
   }
 
   update() {
     super.update();
 
-    if (this.found) {
-      this.angle += this.rotationSpeed;
-    }
+}
+
+clicked() {
+  if (this.found) {
+    this.vx += this.speed;
+  } else {
+    this.vx = 0;
   }
+}
 
   mousePressed() {
     if (mouseX > this.x - this.image.width / 2 &&

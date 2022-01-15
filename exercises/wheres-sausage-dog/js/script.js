@@ -83,6 +83,7 @@ function draw() {
 
 function start() {
   background(startImage);
+  keyPressed();
 }
 
 function simulation() {
@@ -92,6 +93,8 @@ function simulation() {
     fruits[i].update();
   }
 
+  pizza.move();
+  pizza.clicked();
   pizza.update();
 }
 
@@ -103,13 +106,17 @@ function success() {
 
 }
 
+function keyPressed() {
+  if (keyCode === 32) {
+    // When spacebar is pressed, state changes from `start` to `simulation`
+    if (state === `start`) {
+      state = `simulation`;
+    }
+  }
+}
+
 function mousePressed() {
   pizza.mousePressed();
-
-  // When mouse is pressed, state changes from `start` to `simulation`
-  if (state === `start`) {
-    state = `simulation`;
-  }
 }
 
 
