@@ -8,10 +8,12 @@ class Fruit {
     this.height = 300;
   }
 
+  // Adding movement for pizza
   move() {
     this.x += this.vx;
   }
 
+  // Displaying fruit images
   update() {
     this.display();
   }
@@ -22,5 +24,4 @@ class Fruit {
     image(this.image, this.x, this.y, this.width, this.height);
     pop();
   }
-
 }

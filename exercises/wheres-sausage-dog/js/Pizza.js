@@ -5,27 +5,31 @@ class Pizza extends Fruit {
     this.found = false;
   }
 
+  // Displaying pizza
   update() {
     super.update();
 
-}
-
-checkExit() {
-  if (this.x > width) {
-    state = `success`
-  } else {
-    state = `simulation`;
   }
-}
 
-clicked() {
-  if (this.found) {
-    this.vx += this.speed;
-  } else {
-    this.vx = 0;
+  // `Success` state is triggered when pizza exits frame
+  checkExit() {
+    if (this.x > width) {
+      state = `success`
+    } else {
+      state = `simulation`;
+    }
   }
-}
 
+  // Clicking the pizza makes it move to the right
+  clicked() {
+    if (this.found) {
+      this.vx += this.speed;
+    } else {
+      this.vx = 0;
+    }
+  }
+
+  // Detecting when pizza has been clicked/found
   mousePressed() {
     if (mouseX > this.x - this.width / 2 &&
       mouseX < this.x + this.width / 2 &&
