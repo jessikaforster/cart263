@@ -25,6 +25,8 @@ let startImage;
 let failureImage;
 let successImage;
 
+let simulationTimer = 250;
+
 
 /**
 Description of preload
@@ -97,10 +99,19 @@ function simulation() {
   pizza.clicked();
   pizza.checkExit();
   pizza.update();
+
+  simulationTimer -= 1;
+  if (simulationTimer <= 0) {
+    state = `failure`;
+  }
+
+  text(simulationTimer, width / 24, height / 16);
+  textSize(60);
+  fill(255);
 }
 
 function failure() {
-
+background(failureImage);
 }
 
 function success() {
