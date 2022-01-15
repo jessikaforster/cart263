@@ -95,6 +95,7 @@ function simulation() {
 
   pizza.move();
   pizza.clicked();
+  pizza.checkExit();
   pizza.update();
 }
 
@@ -103,7 +104,7 @@ function failure() {
 }
 
 function success() {
-
+background(successImage);
 }
 
 function keyPressed() {
@@ -116,7 +117,7 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  pizza.mousePressed();
+pizza.mousePressed();
 }
 
 

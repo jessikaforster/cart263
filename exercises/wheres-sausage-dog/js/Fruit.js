@@ -4,7 +4,8 @@ class Fruit {
     this.y = y;
     this.vx = 0;
     this.image = image;
-    this.size = 300;
+    this.width = 300;
+    this.height = 300;
   }
 
   move() {
@@ -18,7 +19,7 @@ class Fruit {
   display() {
     push();
     imageMode(CENTER);
-    image(this.image, this.x, this.y, this.size, this.size);
+    image(this.image, this.x, this.y, this.width, this.height);
     pop();
   }
 

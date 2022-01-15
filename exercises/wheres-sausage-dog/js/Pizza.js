@@ -10,6 +10,14 @@ class Pizza extends Fruit {
 
 }
 
+checkExit() {
+  if (this.x > width) {
+    state = `success`
+  } else {
+    state = `simulation`;
+  }
+}
+
 clicked() {
   if (this.found) {
     this.vx += this.speed;
@@ -19,10 +27,10 @@ clicked() {
 }
 
   mousePressed() {
-    if (mouseX > this.x - this.image.width / 2 &&
-      mouseX < this.x + this.image.width / 2 &&
-      mouseY > this.y - this.image.height / 2 &&
-      mouseY < this.y + this.image.height / 2) {
+    if (mouseX > this.x - this.width / 2 &&
+      mouseX < this.x + this.width / 2 &&
+      mouseY > this.y - this.height / 2 &&
+      mouseY < this.y + this.height / 2) {
       this.found = true;
     }
   }
