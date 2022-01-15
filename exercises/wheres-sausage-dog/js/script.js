@@ -33,7 +33,7 @@ function preload() {
 // Loading all state images
 startImage = loadImage("assets/images/start.png");
 failureImage = loadImage("assets/images/failure.png");
-successImage = loadImage("assets/images/success.jpg");
+successImage = loadImage("assets/images/success.png");
 
   for (let i = 0; i < NUM_FRUIT_IMAGES; i++) {
       let fruitImage = loadImage(`assets/images/fruit${i}.png`)
@@ -79,9 +79,15 @@ function draw() {
   } else if (state === `success`) {
     success();
   }
+}
+
+function start() {
+  background(startImage);
+}
+
+function simulation() {
   // Light blue background
   background(52, 225, 235);
-
   for (let i = 0; i < fruits.length; i++) {
     fruits[i].update();
   }
@@ -89,8 +95,21 @@ function draw() {
   pizza.update();
 }
 
+function failure() {
+
+}
+
+function success() {
+
+}
+
 function mousePressed() {
   pizza.mousePressed();
+
+  // When mouse is pressed, state changes from `start` to `simulation`
+  if (state === `start`) {
+    state = `simulation`;
+  }
 }
 
 
