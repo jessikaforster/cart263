@@ -9,7 +9,7 @@ game is to find the one image that is different from the others.
 "use strict";
 
 const NUM_FRUIT_IMAGES = 10;
-const NUM_FRUITS = 80;
+const NUM_FRUITS = 100;
 
 let fruitImages = [];
 let fruits = [];
