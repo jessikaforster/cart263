@@ -4,8 +4,6 @@ class Fruit {
     this.y = y;
     this.image = image;
     this.size = 300;
-
-    this.angle = 0;
   }
 
 
@@ -16,8 +14,6 @@ class Fruit {
   display() {
     push();
     imageMode(CENTER);
-    translate(this.x, this.y);
-    rotate(this.angle);
     image(this.image, this.x, this.y, this.size, this.size);
     pop();
   }

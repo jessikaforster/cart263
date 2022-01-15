@@ -66,3 +66,12 @@ function draw() {
 
   pizza.update();
 }
+
+function mousePressed() {
+  pizza.mousePressed();
+}
+
+
+function instructions() {
+
+}
