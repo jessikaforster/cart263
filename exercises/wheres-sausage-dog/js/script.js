@@ -2,7 +2,7 @@
 Where's Sausage Dog?
 Jessika Forster
 
-Exercise to remember JavaScript, p5.js and to enjoy programming! The goal of my
+Exercise to remember JavaScript, p5.js and to enjoy programming! The goal of the
 game is to find the one image that is different from the others.
 */
 
@@ -31,7 +31,6 @@ let successImage;
 
 // Timer displayed during simulation
 let simulationTimer = 250;
-
 
 /**
 Loading images to be used
@@ -109,7 +108,7 @@ function simulation() {
   pizza.move();
   // When pizza is clicked it exits screen
   pizza.clicked();
-  // When pizza exists `success` state is triggered
+  // When pizza exits `success` state is triggered
   pizza.checkExit();
   // Displaying pizza
   pizza.update();
