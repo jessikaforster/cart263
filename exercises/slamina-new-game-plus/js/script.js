@@ -8,6 +8,9 @@ author, and this description to match your project!
 
 "use strict";
 
+let state = `start`;
+// Could be start, simulation, success, failure
+
 const songs = [
   "one minute back",
   "alarm clock",
@@ -18,7 +21,7 @@ const songs = [
   "best place",
   "chocolate",
   "colorful",
-  "dont call me",
+  "don't call me",
   "dream girl",
   "dynamite",
   "everybody",
@@ -48,7 +51,7 @@ const songs = [
   "replay",
   "ring ding dong",
   "romantic",
-  "romeo+juliette",
+  "romeo+juliet", //actually juliette but system only recognizes juliet
   "runaway",
   "sherlock",
   "the shinee world",
@@ -70,18 +73,30 @@ const NUM_ALBUMS = 40;
 let albumImages = [];
 let albums = [];
 
+let introImage;
+let successSFX;
+
+let intro = {
+  x: undefined,
+  y: undefined,
+  width: 800,
+  height: 560,
+};
+
 /**
 Description of preload
 */
 function preload() {
+introImage = loadImage("assets/images/shinee.jpg");
+
+successSFX = loadSound("assets/sounds/superstar.wav");
+
   // Loading all 20 song images at once
     for (let i = 0; i < NUM_ALBUM_IMAGES; i++) {
       let albumImage = loadImage(`assets/images/album${i}.jpeg`)
       albumImages.push(albumImage);
     }
-
 }
-
 
 /**
 Description of setup
@@ -116,20 +131,64 @@ if (annyang) {
 Description of draw()
 */
 function draw() {
-background(84, 255, 190);
-
-if (currentAnswer === currentSong) {
-  fill(0,255,0);
+if (state === `start`) {
+  start();
+} else if (state === `simulation`) {
+  simulation();
+} else if (state === `failure`) {
+  failure();
+} else if (state === `success`) {
+  success();
 }
-else {
-  fill(255,0,0);
 }
-text(currentAnswer, width/2, height/2);
 
-// Displaying all albums
-  for (let i = 0; i < albums.length; i++) {
-    albums[i].update();
+function start() {
+  background(73, 18, 207);
+  displayIntro();
+  keyPressed();
+}
+
+// (84, 255, 190)
+
+function simulation() {
+  background(0, 135, 255);
+
+  // Displaying all albums
+    for (let i = 0; i < albums.length; i++) {
+      albums[i].update();
+    }
+
+  if (currentAnswer === currentSong) {
+    state = `success`;
   }
+  else {
+    state = `simulation`;
+  }
+  }
+
+function failure() {
+background(0, 135, 255);
+}
+
+function success() {
+background(0, 135, 255);
+}
+
+// Pressing space triggers `simulation` state
+function keyPressed() {
+  if (keyCode === 32) {
+    // When spacebar is pressed, state changes from `start` to `simulation`
+    if (state === `start`) {
+      state = `simulation`;
+    }
+  }
+}
+
+function displayIntro() {
+  image(introImage, width / 2, height / 2, intro.width, intro.height);
+  imageMode(CENTER, CENTER);
+
+
 }
 
 function mousePressed() {

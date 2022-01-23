@@ -6,8 +6,10 @@ class Album {
     this.vy = 0;
     this.speed = 1;
     this.image = image;
-    this.width = 150;
-    this.height = 150;
+    this.angle = 0;
+    this.size = 150;
+    this.rotationSpeed = 0.25;
+    this.correct = false;
   }
 
 
@@ -15,12 +17,14 @@ class Album {
 update() {
   this.display();
   this.move();
-}
+  }
 
 display() {
   push();
   imageMode(CENTER);
-  image(this.image, this.x, this.y, this.width, this.height);
+  translate(this.x, this.y);
+  rotate(this.angle);
+  image(this.image, 0, 0, this.size, this.size);
   pop();
 }
 
