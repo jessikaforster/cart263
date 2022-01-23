@@ -29,7 +29,7 @@ const songs = [
   "good evening",
   "heart attack",
   "hello",
-  "hitchhiking"
+  "hitchhiking",
   "hold you",
   "I want you",
   "jojo",
@@ -88,6 +88,7 @@ if (annyang) {
   textSize(32);
   textStyle(BOLD);
   textAlign(CENTER, CENTER);
+  }
 }
 
 
@@ -95,5 +96,37 @@ if (annyang) {
 Description of draw()
 */
 function draw() {
+background(84, 255, 190);
 
+if (currentAnswer === currentSong) {
+  fill(0,255,0);
+}
+else {
+  fill(255,0,0);
+}
+text(currentAnswer, width/2, height/2);
+}
+
+function mousePressed() {
+  currentSong = random(songs);
+  let reverseSong = reverseString(currentSong);
+  responsiveVoice.speak(reverseSong);
+}
+
+function guessSong(song) {
+  currentAnswer = song.toLowerCase();
+}
+
+/**
+Reverses the provided string
+*/
+function reverseString(string) {
+  // Split the string into an array of characters
+  let characters = string.split('');
+  // Reverse the array of characters
+  let reverseCharacters = characters.reverse();
+  // Join the array of characters back into a string
+  let result = reverseCharacters.join('');
+  // Return the result
+  return result;
 }
