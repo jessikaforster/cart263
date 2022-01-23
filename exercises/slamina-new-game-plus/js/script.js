@@ -64,10 +64,20 @@ const songs = [
 let currentSong = ``;
 let currentAnswer = ``;
 
+const NUM_ALBUM_IMAGES = 20;
+
+let albumImages = [];
+let albums = [];
+
 /**
 Description of preload
 */
 function preload() {
+  // Loading all 20 song images at once
+    for (let i = 0; i < NUM_ALBUM_IMAGES; i++) {
+      let albumImage = loadImage(`assets/images/album${i}.jpg`)
+      albumImages.push(albumImage);
+    }
 
 }
 
