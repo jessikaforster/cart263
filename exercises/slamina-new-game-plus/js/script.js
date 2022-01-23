@@ -58,9 +58,11 @@ const songs = [
   "superstar",
   "tell me what to do",
   "view",
-  "why so serious",
-]
+  "why so serious"
+];
 
+let currentSong = ``;
+let currentAnswer = ``;
 
 /**
 Description of preload
@@ -74,7 +76,18 @@ function preload() {
 Description of setup
 */
 function setup() {
+createCanvas(windowWidth, windowHeight);
 
+if (annyang) {
+  let commands = {
+    'I think it is *song': guessSong
+  };
+  annyang.addCommands(commands);
+  annyang.start();
+
+  textSize(32);
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
 }
 
 
