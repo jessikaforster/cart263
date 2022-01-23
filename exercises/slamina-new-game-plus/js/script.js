@@ -74,6 +74,7 @@ let albumImages = [];
 let albums = [];
 
 let introImage;
+
 let successSFX;
 
 let intro = {
@@ -139,7 +140,7 @@ if (state === `start`) {
   failure();
 } else if (state === `success`) {
   success();
-}
+  }
 }
 
 function start() {
@@ -158,13 +159,14 @@ function simulation() {
       albums[i].update();
     }
 
-  if (currentAnswer === currentSong) {
-    state = `success`;
-  }
-  else {
-    state = `simulation`;
-  }
-  }
+    if (currentAnswer === currentSong) {
+      fill(0,255,0);
+    }
+    else {
+      fill(255,0,0);
+    }
+    text(currentAnswer, width/2, height/2);
+}
 
 function failure() {
 background(0, 135, 255);
@@ -181,6 +183,9 @@ function keyPressed() {
     if (state === `start`) {
       state = `simulation`;
     }
+  }
+if (keyCode === 66) {
+  responsiveVoice.speak("welcome to guess the shinee song! the song will be read backwards and you must reply with i think the song is  blank. click anywhere for a song to be played");
   }
 }
 
@@ -199,6 +204,11 @@ function mousePressed() {
 
 function guessSong(song) {
   currentAnswer = song.toLowerCase();
+}
+
+function playSong() {
+  if (currentAnswer === currentSong) {
+  }
 }
 
 /**
