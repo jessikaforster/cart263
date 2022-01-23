@@ -116,12 +116,13 @@ createCanvas(windowWidth, windowHeight);
 
 if (annyang) {
   let commands = {
-    'I think it is *song': guessSong
+    'I think the song is *song': guessSong
   };
   annyang.addCommands(commands);
   annyang.start();
 
   textSize(32);
+  textFont(`Roboto Mono`);
   textStyle(BOLD);
   textAlign(CENTER, CENTER);
   }
@@ -147,6 +148,14 @@ function start() {
   background(73, 18, 207);
   displayIntro();
   keyPressed();
+push();
+  textSize(50);
+  textFont(`Roboto Mono`);
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
+  text(`Guess the eeNIHS song`, windowWidth / 2, windowHeight / 5);
+  text(`Press space to start!`, windowWidth / 2, windowHeight / 1.25);
+  pop();
 }
 
 // (84, 255, 190)
@@ -158,6 +167,15 @@ function simulation() {
     for (let i = 0; i < albums.length; i++) {
       albums[i].update();
     }
+
+    push();
+      textSize(50);
+      fill(0);
+      textFont(`Roboto Mono`);
+      textStyle(BOLD);
+      textAlign(CENTER, CENTER);
+      text(`Press 'B' to hear the instructions`, windowWidth / 2, windowHeight / 5);
+      pop();
 
     if (currentAnswer === currentSong) {
       fill(0,255,0);
@@ -185,7 +203,7 @@ function keyPressed() {
     }
   }
 if (keyCode === 66) {
-  responsiveVoice.speak("welcome to guess the shinee song! the song will be read backwards and you must reply with i think the song is  blank. click anywhere for a song to be played");
+  responsiveVoice.speak("The song title will be read backwards and you must reply with i think the song is  blank. click anywhere for a song title to be said");
   }
 }
 
