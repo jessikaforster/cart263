@@ -65,6 +65,7 @@ let currentSong = ``;
 let currentAnswer = ``;
 
 const NUM_ALBUM_IMAGES = 20;
+const NUM_ALBUMS = 40;
 
 let albumImages = [];
 let albums = [];
@@ -75,7 +76,7 @@ Description of preload
 function preload() {
   // Loading all 20 song images at once
     for (let i = 0; i < NUM_ALBUM_IMAGES; i++) {
-      let albumImage = loadImage(`assets/images/album${i}.jpg`)
+      let albumImage = loadImage(`assets/images/album${i}.jpeg`)
       albumImages.push(albumImage);
     }
 
@@ -87,6 +88,15 @@ Description of setup
 */
 function setup() {
 createCanvas(windowWidth, windowHeight);
+
+// Create the albums to be displayed randomly and move
+  for (let i = 0; i < NUM_ALBUMS; i++) {
+    let x = random(0, width);
+    let y = random(0, height);
+    let albumImage = random(albumImages);
+    let album = new Album(x, y, albumImage);
+    albums.push(album);
+  }
 
 if (annyang) {
   let commands = {
@@ -115,6 +125,11 @@ else {
   fill(255,0,0);
 }
 text(currentAnswer, width/2, height/2);
+
+// Displaying all albums
+  for (let i = 0; i < albums.length; i++) {
+    albums[i].update();
+  }
 }
 
 function mousePressed() {
