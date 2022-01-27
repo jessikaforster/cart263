@@ -121,7 +121,7 @@ if (annyang) {
   annyang.addCommands(commands);
   annyang.start();
 
-  textSize(32);
+  textSize(50);
   textFont(`Roboto Mono`);
   textStyle(BOLD);
   textAlign(CENTER, CENTER);
@@ -168,6 +168,15 @@ function simulation() {
       albums[i].update();
     }
 
+if (currentAnswer === currentSong) {
+fill(0,255,0);
+}
+else {
+  fill(255,0,0);
+}
+text(currentAnswer, width/2, height/2);
+
+
     push();
       textSize(50);
       fill(0);
@@ -176,14 +185,6 @@ function simulation() {
       textAlign(CENTER, CENTER);
       text(`Press 'B' to hear the instructions`, windowWidth / 2, windowHeight / 5);
       pop();
-
-    if (currentAnswer === currentSong) {
-      fill(0,255,0);
-    }
-    else {
-      fill(255,0,0);
-    }
-    text(currentAnswer, width/2, height/2);
 }
 
 function failure() {
@@ -222,11 +223,6 @@ function mousePressed() {
 
 function guessSong(song) {
   currentAnswer = song.toLowerCase();
-}
-
-function playSong() {
-  if (currentAnswer === currentSong) {
-  }
 }
 
 /**

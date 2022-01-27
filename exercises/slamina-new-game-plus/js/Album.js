@@ -17,7 +17,7 @@ class Album {
 update() {
   this.display();
   this.move();
-  }
+}
 
 display() {
   push();
