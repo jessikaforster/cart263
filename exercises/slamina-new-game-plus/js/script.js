@@ -36,7 +36,7 @@ const songs = [
   "hold you",
   "I want you",
   "jojo",
-  "juliette",
+  "juliet", //actually juliette but system only recognizes juliet
   "like a fire",
   "love like oxygen",
   "love should go on",
@@ -204,7 +204,7 @@ function keyPressed() {
     }
   }
 if (keyCode === 66) {
-  responsiveVoice.speak("The song title will be read backwards and you must reply with i think the song is  blank. click anywhere for a song title to be said");
+  responsiveVoice.speak("The song title will be read backwards and you must reply with i think the song is  blank. click anywhere for a song title to be said", "US English Female");
   }
 }
 
@@ -218,7 +218,7 @@ function displayIntro() {
 function mousePressed() {
   currentSong = random(songs);
   let reverseSong = reverseString(currentSong);
-  responsiveVoice.speak(reverseSong);
+  responsiveVoice.speak(reverseSong, "US English Female");
 }
 
 function guessSong(song) {
