@@ -1,12 +1,20 @@
 /**
-Title of Project
-Author Name
+Spy Profile Generator+
+Jessika Forster
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+The game I have created in order to get used to using JSON data files is a home design game.
+Everytime you refresh, a new design plan appears for your new 'dream home'.
 */
 
 "use strict";
+
+let housePlan = {
+  location: `**REDACTED**`,
+  doorCode: `**REDACTED**`,
+  wallColour: `**REDACTED**`,
+  art: `**REDACTED**`,
+  plant: `**REDACTED**`
+};
 
 
 /**
