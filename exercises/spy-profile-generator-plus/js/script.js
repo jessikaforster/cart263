@@ -12,13 +12,13 @@ let housePlan = {
   dreamItem: `**REDACTED**`,
   location: `**REDACTED**`,
   wallColour: `**REDACTED**`,
-  art: `**REDACTED**`,
+  artwork: `**REDACTED**`,
   plant: `**REDACTED**`,
   centerPiece: `**REDACTED**`,
   doorCode: `**REDACTED**`
 };
 
-let countryData = undefined;
+let locationData = undefined;
 let colourData = undefined;
 let artworkData = undefined;
 let plantData = undefined;
@@ -31,7 +31,7 @@ let wallImage;
 Description of preload
 */
 function preload() {
-countryData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/geography/countries.json`);
+locationData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/geography/countries.json`);
 colourData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/colors/web_colors.json`);
 artworkData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/art/isms.json`);
 plantData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/plants/plants.json`);
@@ -48,35 +48,18 @@ Description of setup
 function setup() {
 createCanvas(windowWidth, windowHeight);
 
-let data = JSON.parse(localStorage.getItem(`house-plan-data`));
-
-if (data !== null) {
-let doorCode = prompt(`Please enter the door passcode`)
-if (doorCode === data.doorCode) {
-  housePlan.dreamItem = housePlan.dreamItem
-  housePlan.location = data.location;
-  housePlan.wallColour = data.wallColour;
-  housePlan.art = data.art;
-  housePlan.plant = data.plant;
-  housePlan.centerPiece = data.centerPiece;
-  housePlan.doorCode = data.doorCode;
-}
-  }
-else {
-  generateHousePlan();
-  }
+generateHousePlan();
 }
 
 function generateHousePlan() {
   housePlan.dreamItem = prompt(`What is one dream item you'd want in your home?`);
-  let location = random(locationData.locations);
-  let colour = random(colourData.colours);
-  let artwork = random(artworkData.artworks);
-  let plant = random(plantData.plants);
-  let centerPiece = random(objectData.objects);
-  let doorCode = random(numberData.numbers);
+  housePlan.location = random(locationData.countries);
+  housePlan.wallColour = random(colourData.web_colors);
+  housePlan.artwork = random(artworkData.isms);
+  housePlan.plant = random(plantData.plants);
+  housePlan.centerPiece = random(objectData.objects);
+  housePlan.doorCode = random(numberData.primes);
 
-  localStorage.setItem(`house-plan-data`,JSON.stringify(housePlan));
 }
 
 
@@ -85,5 +68,23 @@ Description of draw()
 */
 function draw() {
   background(wallImage);
+
+  let houseSetup = `CREATE YOUR VERY OWN DREAM HOME!
+
+Must-Have: ${housePlan.dreamItem}
+Location: ${housePlan.location}
+Wall colour: ${housePlan.wallColour}
+Art style: ${housePlan.artwork}
+Plant: ${housePlan.plant}
+Center Piece: ${housePlan.centerPiece}
+Door Code: ${housePlan.doorCode}`;
+
+push();
+textFont(`Courier, monospace`);
+textSize(24);
+textAlign(LEFT, TOP);
+fill(0);
+text(houseSetup, 100, 100);
+pop();
 
 }
