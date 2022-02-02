@@ -8,7 +8,7 @@ Everytime you refresh, a new design plan appears for your new 'dream home'.
 
 "use strict";
 
-// Variables that will be filled in
+// Variables that will be filled in when game loads
 let housePlan = {
   dreamItem: `**REDACTED**`,
   location: `**REDACTED**`,
@@ -43,7 +43,7 @@ function preload() {
 
 
 /**
-Creating canvas to fill entire
+Creating canvas to fill entire window
 */
 function setup() {
   createCanvas(windowWidth, windowHeight);
