@@ -22,6 +22,9 @@ let numberData = undefined;
 let colourData = undefined;
 let artData = undefined;
 let plantData = undefined;
+let objectData = undefined;
+
+let wallImage;
 
 /**
 Description of preload
@@ -33,6 +36,8 @@ colourData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/
 artData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/art/isms.json`);
 plantData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/plants/plants.json`);
 objectData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
+
+wallImage = loadImage("assets/images/wall.png");
 }
 
 
@@ -49,5 +54,6 @@ createCanvas(windowWidth, windowHeight);
 Description of draw()
 */
 function draw() {
+  background(wallImage);
 
 }
