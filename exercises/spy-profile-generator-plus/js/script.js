@@ -11,7 +11,6 @@ Everytime you refresh, a new design plan appears for your new 'dream home'.
 let housePlan = {
   dreamItem: `**REDACTED**`,
   location: `**REDACTED**`,
-  wallColour: `**REDACTED**`,
   artwork: `**REDACTED**`,
   plant: `**REDACTED**`,
   centerPiece: `**REDACTED**`,
@@ -19,7 +18,6 @@ let housePlan = {
 };
 
 let locationData = undefined;
-let colourData = undefined;
 let artworkData = undefined;
 let plantData = undefined;
 let objectData = undefined;
@@ -32,9 +30,8 @@ Description of preload
 */
 function preload() {
 locationData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/geography/countries.json`);
-colourData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/colors/web_colors.json`);
 artworkData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/art/isms.json`);
-plantData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/plants/plants.json`);
+plantData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/plants/flowers.json`);
 objectData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
 numberData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/mathematics/primes.json`);
 
@@ -54,9 +51,8 @@ generateHousePlan();
 function generateHousePlan() {
   housePlan.dreamItem = prompt(`What is one dream item you'd want in your home?`);
   housePlan.location = random(locationData.countries);
-  housePlan.wallColour = random(colourData.web_colors);
   housePlan.artwork = random(artworkData.isms);
-  housePlan.plant = random(plantData.plants);
+  housePlan.plant = random(plantData.flowers);
   housePlan.centerPiece = random(objectData.objects);
   housePlan.doorCode = random(numberData.primes);
 
@@ -73,15 +69,14 @@ function draw() {
 
 Must-Have: ${housePlan.dreamItem}
 Location: ${housePlan.location}
-Wall colour: ${housePlan.wallColour}
 Art style: ${housePlan.artwork}
 Plant: ${housePlan.plant}
 Center Piece: ${housePlan.centerPiece}
 Door Code: ${housePlan.doorCode}`;
 
 push();
-textFont(`Courier, monospace`);
-textSize(24);
+textFont(`'Josefin Sans`);
+textSize(30);
 textAlign(LEFT, TOP);
 fill(0);
 text(houseSetup, 100, 100);
