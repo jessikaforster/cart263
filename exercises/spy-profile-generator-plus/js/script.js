@@ -13,15 +13,26 @@ let housePlan = {
   doorCode: `**REDACTED**`,
   wallColour: `**REDACTED**`,
   art: `**REDACTED**`,
-  plant: `**REDACTED**`
+  plant: `**REDACTED**`,
+  centerPiece: `**REDACTED**`
 };
 
+let countryData = undefined;
+let numberData = undefined;
+let colourData = undefined;
+let artData = undefined;
+let plantData = undefined;
 
 /**
 Description of preload
 */
 function preload() {
-
+countryData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/geography/countries.json`);
+numberData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/mathematics/primes.json`);
+colourData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/colors/web_colors.json`);
+artData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/art/isms.json`);
+plantData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/plants/plants.json`);
+objectData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
 }
 
 
@@ -29,6 +40,7 @@ function preload() {
 Description of setup
 */
 function setup() {
+createCanvas(windowWidth, windowHeight);
 
 }
 
