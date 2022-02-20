@@ -34,6 +34,14 @@ line1P.innerText = line1;
 line2P.innerText = line2;
 line3P.innerText = line3;
 
+line1P.addEventListener(`click`, lineClicked);
+line2P.addEventListener(`click`, lineClicked);
+line3P.addEventListener(`click`, lineClicked);
+
+function lineClicked(event) {
+  setNewLine(event.target);
+}
+
 
 function setNewLine(element) {
   if (element === line1P || element === line3P) {
