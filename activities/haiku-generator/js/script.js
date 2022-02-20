@@ -34,6 +34,16 @@ line1P.innerText = line1;
 line2P.innerText = line2;
 line3P.innerText = line3;
 
+
+function setNewLine(element) {
+  if (element === line1P || element === line3P) {
+    element.innerText = random(fiveSyllableLines);
+  }
+  else if (element === line2P) {
+    element.innerText = random(sevenSyllableLines);
+  }
+}
+
 function random(array) {
   let index = Math.floor(Math.random() * array.length);
   return array[index];
