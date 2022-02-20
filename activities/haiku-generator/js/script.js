@@ -14,7 +14,6 @@ let fiveSyllableLines = [
   `You have done your best`,
   `They are all gone now`
 ];
-
 let sevenSyllableLines = [
   `Say the things left unsaid`,
   `Never believe the wind's lies`,
@@ -22,6 +21,10 @@ let sevenSyllableLines = [
   `Nothing can satisfy you`,
   `They will not come back again`
 ];
+
+let line1 = random(fiveSyllableLines);
+let line2 = random(sevenSyllableLines);
+let line3 = random(fiveSyllableLines);
 
 function random(array) {
   let index = Math.floor(Math.random() * array.lentgh);
