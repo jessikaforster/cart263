@@ -26,6 +26,10 @@ let line1 = random(fiveSyllableLines);
 let line2 = random(sevenSyllableLines);
 let line3 = random(fiveSyllableLines);
 
+console.log(line1);
+console.log(line2);
+console.log(line3);
+
 function random(array) {
   let index = Math.floor(Math.random() * array.lentgh);
   return array[index];
