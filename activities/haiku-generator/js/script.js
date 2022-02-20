@@ -31,6 +31,6 @@ console.log(line2);
 console.log(line3);
 
 function random(array) {
-  let index = Math.floor(Math.random() * array.lentgh);
+  let index = Math.floor(Math.random() * array.length);
   return array[index];
 }
