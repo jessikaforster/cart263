@@ -51,7 +51,18 @@ function fadeOut(element, opacity) {
     });
   }
   else {
-    // Something to so when it's faded out...
+    setNewLine(element);
+    fadeIn(element, 0);
+  }
+}
+
+function fadeIn(element, opacity) {
+  opacity += 0.01;
+  element.style[`opacity`] = opacity;
+  if (opacity < 1) {
+    requestAnimationFrame(function() {
+      fadeIn(element, opacity);
+    });
   }
 }
 
