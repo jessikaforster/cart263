@@ -1,11 +1,24 @@
 /**
-Title of Project
-Author Name
+Haiku Generator
+Jessika Forster
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Generates a random haiku!
 */
 
 "use strict";
 
-// Code goes here
+let fiveSyllableLines = [
+  `O, to be a tree`,
+  `The cat does not know`,
+  `We are all forests`,
+  `You have done your best`,
+  `They are all gone now`
+];
+
+let sevenSyllableLines = [
+  `Say the things left unsaid`,
+  `Never believe the wind's lies`,
+  `The autumn stretches its legs`,
+  `Nothing can satisfy you`,
+  `They will not come back again`
+];
