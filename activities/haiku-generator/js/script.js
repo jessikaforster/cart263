@@ -22,3 +22,8 @@ let sevenSyllableLines = [
   `Nothing can satisfy you`,
   `They will not come back again`
 ];
+
+function random(array) {
+  let index = Math.floor(Math.random() * array.lentgh);
+  return array[index];
+}
