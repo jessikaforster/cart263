@@ -98,12 +98,12 @@ let line5P = document.getElementById(`line-5`);
 line1P.innerText = line1;
 line2P.innerText = line2;
 line3P.innerText = line3;
-//line4P.innerText = line4;
 line5P.innerText = line5;
 
 line1P.addEventListener(`click`, lineClicked);
 line2P.addEventListener(`click`, lineClicked);
 line3P.addEventListener(`click`, lineClicked);
+line5P.addEventListener(`click`, lineClicked);
 
 function lineClicked(event) {
   fadeOut(event.target, 1);
@@ -134,11 +134,17 @@ function fadeIn(element, opacity) {
 }
 
 function setNewLine(element) {
-  if (element === line1P || element === line3P) {
-    element.innerText = random(fiveSyllableLines);
+  if (element === line1P) {
+    element.innerText = random(months);
   }
   else if (element === line2P) {
-    element.innerText = random(sevenSyllableLines);
+    element.innerText = random(days);
+  }
+  else if (element === line3P) {
+    element.innerText = random(years);
+  }
+  else if (element === line5P) {
+    element.innerText = random(action);
   }
 }
 
