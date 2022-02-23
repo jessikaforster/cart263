@@ -1,5 +1,5 @@
 /**
-Haiku Generator
+Haiku Generator++
 Jessika Forster
 
 The game I have created generates a random fortune that might

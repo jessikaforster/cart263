@@ -9,9 +9,9 @@ body {
   margin-top: 100px;
   text-align: center;
   font-size: 4rem;
+  font-weight: bold;
   /* White background for text */
   background-color: #FFFFFF;
-  padding: 8px;
   border-radius: 20px;
   margin-left: 100px;
   margin-right: 100px;
@@ -19,7 +19,6 @@ body {
   /* Blue border */
   border-color: #a4fbfc;
   border-width: 20px;
-  font-weight: bold;
 }
 
 /* Hovering over text will change it to pink */
