@@ -1,23 +1,28 @@
+/* Purple background colour */
 body {
   background-color: #d7a4fc;
 }
 
-
-
-#haiku {
+/* Editing text font, border and background */
+#generator {
   font-family: 'Roboto Mono', monospace;
   margin-top: 100px;
   text-align: center;
   font-size: 4rem;
+  /* White background for text */
   background-color: #FFFFFF;
-  padding: 10px;
+  padding: 8px;
   border-radius: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   border-style: outset;
+  /* Blue border */
   border-color: #a4fbfc;
   border-width: 20px;
   font-weight: bold;
 }
 
+/* Hovering over text will change it to pink */
 a:hover {
   color: #ff99dd;
 }
