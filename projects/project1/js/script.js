@@ -10,11 +10,21 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 let state = `level1`;
 /* Could be start, level1, level2, level2Fail, level3, level3Fail, level3Success */
 
-// Declaring all images that will be used : START
+/* Declaring all images that will be used : START */
 let startImage;
 
-// Declaring all images that will be used : LEVEL1
+/* Declaring all images that will be used : LEVEL1 */
 let level1Image;
+
+// Variables that will be filled in when game loads
+let userProfile = {
+  firstName: `unknown`,
+  lastName: `unknown`,
+  pronouns: `unknown`,
+  occupation: `unknown`,
+  weapon: `unknown`,
+  trait: `unknown`
+};
 
 // Defining data to be used
 let firstNameData = undefined;
@@ -23,19 +33,19 @@ let jobData = undefined;
 let weaponData = undefined;
 let traitData = undefined;
 
-// Declaring all images that will be used : LEVEL2
+/* Declaring all images that will be used : LEVEL2 */
 let level2Image;
 
-// Declaring all images that will be used : LEVEL2FAIL
+/* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
 
-// Declaring all images that will be used : LEVEL3
+/* Declaring all images that will be used : LEVEL3 */
 let level3Image;
 
-// Declaring all images that will be used : LEVEL3FAIL
+/* Declaring all images that will be used : LEVEL3FAIL */
 let level3FailImage;
 
-// Declaring all images that will be used : LEVEL3SUCCESS
+/* Declaring all images that will be used : LEVEL3SUCCESS */
 let level3SuccessImage;
 
 /**
@@ -73,6 +83,8 @@ Description of setup
 function setup() {
   // Creating the canvas to fill the user's window size
     createCanvas(windowWidth, windowHeight);
+
+    generateUserProfile();
 }
 
 
@@ -106,6 +118,9 @@ function start() {
 function level1() {
   // Displaying level 1 image as background
     background(level1Image);
+
+  // Function to generate house plan variables
+    displayUserProfile();
 }
 
 function level2() {
@@ -139,5 +154,43 @@ function keyPressed() {
     if (state === `start`) {
       state = `level1`;
     }
+    if (state === `level1`) {
+      state = `level2`;
+    }
   }
+}
+
+// Function to generate house plan variables
+function generateUserProfile() {
+  // Prompt will insert your answer into game
+  userProfile.pronouns = prompt(`What are your pronouns?`);
+  // All of the following variables will be generated randomly
+  userProfile.firstName = random(firstNameData.firstNames);
+  userProfile.lastName = random(lastNameData.lastNames);
+  userProfile.occupation = random(jobData.occupations);
+  userProfile.weapon = random(weaponData.objects);
+  userProfile.trait = random(traitData.personality_test);
+}
+
+function displayUserProfile() {
+  // Text to be displayed
+  let passengerProfile = `Passenger 25 on KTX 101 bound for Busan
+
+First Name: ${userProfile.firstName}
+Last Name: ${userProfile.lastName}
+Pronouns: ${userProfile.pronouns}
+Occupation: ${userProfile.occupation}
+Weapon: ${userProfile.weapon}
+People say: ${userProfile.trait}
+
+PRESS SPACE TO CONTINUE`;
+
+// Defining all text variables
+  push();
+  textFont(`'Josefin Sans`);
+  textSize(30);
+  textAlign(LEFT, TOP);
+  fill(0);
+  text(passengerProfile, 100, 100);
+  pop();
 }
