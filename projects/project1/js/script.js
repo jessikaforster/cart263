@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `start`;
+let state = `level1`;
 /* Could be start, level1, level2, level2Fail, level3, level3Fail, level3Success */
 
 // Declaring all images that will be used : START
@@ -15,6 +15,13 @@ let startImage;
 
 // Declaring all images that will be used : LEVEL1
 let level1Image;
+
+// Defining data to be used
+let firstNameData = undefined;
+let lastNameData = undefined;
+let jobData = undefined;
+let weaponData = undefined;
+let traitData = undefined;
 
 // Declaring all images that will be used : LEVEL2
 let level2Image;
@@ -39,6 +46,14 @@ function preload() {
   startImage = loadImage("assets/images/start.jpg");
 // Loading images to be used into code : LEVEL1
   level1Image = loadImage("assets/images/profilebg.jpg");
+
+// Loading JSON files
+  firstNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/firstNames.json`);
+  lastNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/lastNames.json`);
+  jobData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/occupations.json`);
+  weaponData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
+  traitData = loadJSON (`https://raw.githubusercontent.com/dariusk/corpora/master/data/psychology/personality_test.json`);
+
 // Loading images to be used into code : LEVEL2
   level2Image = loadImage("assets/images/train2.gif");
 // Loading images to be used into code : LEVEL2FAIL
