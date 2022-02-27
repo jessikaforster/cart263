@@ -21,6 +21,7 @@ let userProfile = {
   firstName: `unknown`,
   lastName: `unknown`,
   pronouns: `unknown`,
+  age: `unknown`,
   occupation: `unknown`,
   weapon: `unknown`,
   trait: `unknown`
@@ -164,6 +165,8 @@ function keyPressed() {
 function generateUserProfile() {
   // Prompt will insert your answer into game
   userProfile.pronouns = prompt(`What are your pronouns?`);
+  // Prompt will insert your answer into game
+  userProfile.age = prompt(`How old are you?`);
   // All of the following variables will be generated randomly
   userProfile.firstName = random(firstNameData.firstNames);
   userProfile.lastName = random(lastNameData.lastNames);
@@ -179,6 +182,7 @@ function displayUserProfile() {
 First Name: ${userProfile.firstName}
 Last Name: ${userProfile.lastName}
 Pronouns: ${userProfile.pronouns}
+Age: ${userProfile.age}
 Occupation: ${userProfile.occupation}
 Weapon: ${userProfile.weapon}
 People say: ${userProfile.trait}
@@ -187,8 +191,8 @@ PRESS SPACE TO CONTINUE`;
 
 // Defining all text variables
   push();
-  textFont(`'Josefin Sans`);
-  textSize(30);
+  textFont(`Rajdhani`);
+  textSize(50);
   textAlign(LEFT, TOP);
   fill(0);
   text(passengerProfile, 100, 100);
