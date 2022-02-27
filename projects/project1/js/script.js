@@ -85,6 +85,7 @@ function draw() {
 function start() {
   // Displaying starting image as background
     background(startImage);
+    keyPressed();
 }
 
 function level1() {
@@ -114,4 +115,14 @@ function level3Fail() {
 function level3Success() {
   // Displaying level 3 success image as background
     background(level3SuccessImage);
+}
+
+// Pressing a specific key triggers new state
+function keyPressed() {
+  if (keyCode === 32) {
+    // When spacebar is pressed, state changes from `start` to `level1` : START
+    if (state === `start`) {
+      state = `level1`;
+    }
+  }
 }
