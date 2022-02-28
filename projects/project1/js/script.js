@@ -279,15 +279,17 @@ if (predictions) {
     highlightObject(object);
 
     if (object.confidence > 0.8) {
-      text(`You have not been infected, press G to continue`, windowWidth / 2, windowHeight / 2);
+      text(`You have not been infected, press G to continue`, windowWidth / 2, windowHeight / 1.5);
       textSize(60);
+      textAlign(CENTER, CENTER);
       textFont(`Rajdhani`);
       textStyle(BOLD);
       fill(0, 255, 0);
     }
-    if (object.confidence < 0.6) {
-      text(`You have been infected, press H to continue`, windowWidth / 2, windowHeight / 2);
+    if (object.confidence < 0.7) {
+      text(`You have been infected, press H to continue`, windowWidth / 2, windowHeight / 1.5);
       textSize(60);
+      textAlign(CENTER, CENTER);
       textFont(`Rajdhani`);
       textStyle(BOLD);
       fill(255, 0, 0);
