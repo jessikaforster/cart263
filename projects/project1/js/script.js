@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `level2`;
+let state = `start`;
 /* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
@@ -156,12 +156,12 @@ function level1() {
 
   // Function to generate house plan variables
     displayUserProfile();
+    keyPressed();
 }
 
 function level2Intro() {
   // Displaying level 2 image as background
     background(level2IntroImage);
-    keyPressed();
     textLevel2Intro();
 }
 
@@ -245,7 +245,7 @@ if (keyCode === 83) {
 }
     // Pressing 'B' will trigger ResponsiveVoice to say instructions
   if (keyCode === 66) {
-    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using your mouse to move and dodge incoming zombies. Press S to start");
+    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using your mouse to move and dodge incoming zombies. Be sure to have your mouse on the left side of the screen. Press S to start");
   }
 }
 
@@ -276,7 +276,7 @@ Occupation: ${userProfile.occupation}
 Weapon: ${userProfile.weapon}
 People say: ${userProfile.trait}
 
-PRESS V TO CONTINUE`;
+PRESS B and V TO CONTINUE`;
 
 // Defining all text variables
   push();
@@ -296,6 +296,6 @@ function textLevel2Intro() {
   textFont(`Rajdhani`);
   textStyle(BOLD);
   textAlign(CENTER, CENTER);
-  text(`Press 'B' to hear the instructions`, windowWidth / 2, windowHeight / 2);
+  text(`Listen to the announcement`, windowWidth / 2, windowHeight / 2);
   pop();
 }
