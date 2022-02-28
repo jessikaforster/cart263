@@ -7,8 +7,8 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `level3Intro`;
-/* Could be start, level1, level2intro, level2, level2Fail, level3Intro, level3, level3Fail, level3Success */
+let state = `start`;
+/* Could be start, level1, level2intro, level2, level3Intro, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
 let startImage;
@@ -169,8 +169,6 @@ function draw() {
     level2Intro();
   } else if (state === `level2`) {
     level2();
-  } else if (state === `level2Fail`) {
-    level2Fail();
   } else if (state === `level3Intro`) {
     level3Intro();
   } else if (state === `level3`) {
@@ -242,11 +240,6 @@ function level2() {
 
   fill(255);
 
-}
-
-function level2Fail() {
-  // Displaying level 2 fail image as background
-  background(level2FailImage);
 }
 
 function level3Intro() {
