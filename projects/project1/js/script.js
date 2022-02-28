@@ -136,6 +136,7 @@ function level2Intro() {
   // Displaying level 2 image as background
     background(level2IntroImage);
     keyPressed();
+    textLevel2Intro();
 }
 
 function level2() {
@@ -169,13 +170,20 @@ function keyPressed() {
     if (state === `start`) {
       state = `level1`;
     }
-    if (state === `level1`) {
-      state = `level2Intro`;
-    }
   }
+  if (keyCode === 86) {
+    if (state === `level1`) {
+    state = `level2Intro`;
+  }
+}
+if (keyCode === 83) {
+  if (state === `level2Intro`) {
+  state = `level2`;
+}
+}
     // Pressing 'B' will trigger ResponsiveVoice to say instructions
   if (keyCode === 66) {
-    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using the arrow keys to move and dodge incoming zombies");
+    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using the arrow keys to move and dodge incoming zombies. Press S to start");
   }
 }
 
@@ -206,14 +214,26 @@ Occupation: ${userProfile.occupation}
 Weapon: ${userProfile.weapon}
 People say: ${userProfile.trait}
 
-PRESS SPACE TO CONTINUE`;
+PRESS V TO CONTINUE`;
 
 // Defining all text variables
   push();
   textFont(`Rajdhani`);
   textSize(50);
   textAlign(LEFT, TOP);
+  textStyle(BOLD);
   fill(0);
   text(passengerProfile, 100, 100);
+  pop();
+}
+
+function textLevel2Intro() {
+  push();
+  textSize(50);
+  fill(0);
+  textFont(`Rajdhani`);
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
+  text(`Press 'B' to hear the instructions`, windowWidth / 2, windowHeight / 2);
   pop();
 }
