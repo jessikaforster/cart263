@@ -7,8 +7,8 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `level1`;
-/* Could be start, level1, level2, level2Fail, level3, level3Fail, level3Success */
+let state = `level2Intro`;
+/* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
 let startImage;
@@ -33,6 +33,9 @@ let lastNameData = undefined;
 let jobData = undefined;
 let weaponData = undefined;
 let traitData = undefined;
+
+/* Declaring all images that will be used : LEVEL2INTRO */
+let level2IntroImage;
 
 /* Declaring all images that will be used : LEVEL2 */
 let level2Image;
@@ -64,6 +67,9 @@ function preload() {
   jobData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/occupations.json`);
   weaponData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
   traitData = loadJSON (`https://raw.githubusercontent.com/dariusk/corpora/master/data/psychology/personality_test.json`);
+
+// Loading images to be used into code : LEVEL2INTRO
+  level2IntroImage = loadImage("assets/images/moving.gif");
 
 // Loading images to be used into code : LEVEL2
   level2Image = loadImage("assets/images/train2.gif");
@@ -97,6 +103,8 @@ function draw() {
     start();
   } else if (state === `level1`) {
     level1();
+  } else if (state === `level2Intro`) {
+    level2Intro();
   } else if (state === `level2`) {
     level2();
   } else if (state === `level2Fail`) {
@@ -122,6 +130,11 @@ function level1() {
 
   // Function to generate house plan variables
     displayUserProfile();
+}
+
+function level2Intro() {
+  // Displaying level 2 image as background
+    background(level2IntroImage);
 }
 
 function level2() {
@@ -156,7 +169,7 @@ function keyPressed() {
       state = `level1`;
     }
     if (state === `level1`) {
-      state = `level2`;
+      state = `level2Intro`;
     }
   }
 }
