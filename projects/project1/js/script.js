@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `level3`;
+let state = `start`;
 /* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
@@ -48,7 +48,7 @@ let numZombies2 = 10;
 let user;
 
 // Timer
-let simulationTimer = 1500;
+let simulationTimer = 1000;
 
 /* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
@@ -261,6 +261,10 @@ if (predictions) {
     let object = predictions[i];
     // Highlight it on the canvas
     highlightObject(object);
+
+    if (object.confidence > 0.8) {
+      state = `level3Success`;
+    }
   }
 }
 }
@@ -365,7 +369,7 @@ function highlightObject(object) {
   // Display the label and confidence in the center of the box
   push();
   textSize(18);
-  fill(255, 255, 0);
+  fill(0, 255, 0);
   textAlign(CENTER, CENTER);
   text(`${object.label}, ${object.confidence.toFixed(2)}`, object.x + object.width / 2, object.y + object.height / 2);
   pop();
