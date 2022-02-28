@@ -183,7 +183,7 @@ if (keyCode === 83) {
 }
     // Pressing 'B' will trigger ResponsiveVoice to say instructions
   if (keyCode === 66) {
-    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using the arrow keys to move and dodge incoming zombies. Press S to start");
+    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using your mouse to move and dodge incoming zombies. Press S to start");
   }
 }
 
