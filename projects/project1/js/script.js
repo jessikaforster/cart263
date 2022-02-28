@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `level2Intro`;
+let state = `start`;
 /* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
@@ -135,6 +135,7 @@ function level1() {
 function level2Intro() {
   // Displaying level 2 image as background
     background(level2IntroImage);
+    keyPressed();
 }
 
 function level2() {
@@ -172,10 +173,15 @@ function keyPressed() {
       state = `level2Intro`;
     }
   }
+    // Pressing 'B' will trigger ResponsiveVoice to say instructions
+  if (keyCode === 66) {
+    responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using the arrow keys to move and dodge incoming zombies");
+  }
 }
 
 // Function to generate house plan variables
 function generateUserProfile() {
+
   // Prompt will insert your answer into game
   userProfile.pronouns = prompt(`What are your pronouns?`);
   // Prompt will insert your answer into game
