@@ -47,6 +47,9 @@ let numZombies2 = 10;
 
 let user;
 
+// Timer
+let simulationTimer = 2000;
+
 /* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
 
@@ -185,6 +188,21 @@ function level2() {
   user.move();
   user.mouseMovement();
   user.display();
+
+  // When timer runs out next level begins
+  simulationTimer -= 1;
+  if (simulationTimer <= 0) {
+    state = `level3`;
+  }
+
+  // Displaying timer at top left corner in white
+  text(simulationTimer, 100, 100);
+  textSize(60);
+  textFont(`Rajdhani`);
+  textStyle(BOLD);
+  textAlign(LEFT, TOP);
+
+  fill(255);
 
 }
 
