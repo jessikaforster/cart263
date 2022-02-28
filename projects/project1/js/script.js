@@ -7,8 +7,8 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `start`;
-/* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
+let state = `level3Intro`;
+/* Could be start, level1, level2intro, level2, level2Fail, level3Intro, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
 let startImage;
@@ -171,6 +171,8 @@ function draw() {
     level2();
   } else if (state === `level2Fail`) {
     level2Fail();
+  } else if (state === `level3Intro`) {
+    level3Intro();
   } else if (state === `level3`) {
     level3();
   } else if (state === `level3Fail`) {
@@ -228,7 +230,7 @@ function level2() {
   // When timer runs out next level begins
   simulationTimer -= 1;
   if (simulationTimer <= 0) {
-    state = `level3`;
+    state = `level3Intro`;
   }
 
   // Displaying timer at top left corner in white
@@ -247,6 +249,20 @@ function level2Fail() {
   background(level2FailImage);
 }
 
+function level3Intro() {
+  background(0);
+
+  push();
+  textSize(50);
+  fill(0,255,0);
+  textFont(`Rajdhani`);
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
+  text(`We will now test if you have been infected, please look at the camera`, windowWidth / 2, windowHeight / 2.1);
+  text(`Click anywhere when you're ready`, windowWidth / 2, windowHeight / 1.9);
+  pop();
+}
+
 function level3() {
   background(0);
 
@@ -263,7 +279,18 @@ if (predictions) {
     highlightObject(object);
 
     if (object.confidence > 0.8) {
-      state = `level3Success`;
+      text(`You have not been infected, press G to continue`, windowWidth / 2, windowHeight / 2);
+      textSize(60);
+      textFont(`Rajdhani`);
+      textStyle(BOLD);
+      fill(0, 255, 0);
+    }
+    if (object.confidence < 0.6) {
+      text(`You have been infected, press H to continue`, windowWidth / 2, windowHeight / 2);
+      textSize(60);
+      textFont(`Rajdhani`);
+      textStyle(BOLD);
+      fill(255, 0, 0);
     }
   }
 }
@@ -297,9 +324,25 @@ function keyPressed() {
       state = `level2`;
     }
   }
+  if (keyCode === 71) {
+    if (state === `level3`) {
+      state = `level3Success`;
+    }
+  }
+  if (keyCode === 72) {
+    if (state === `level3`) {
+      state = `level3Fail`;
+    }
+  }
   // Pressing 'B' will trigger ResponsiveVoice to say instructions
   if (keyCode === 66) {
     responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using your mouse to move and dodge incoming zombies. Be sure to have your mouse on the left side of the screen. Press S to start");
+  }
+}
+
+function mousePressed() {
+  if (state === `level3Intro`) {
+    state = `level3`;
   }
 }
 
