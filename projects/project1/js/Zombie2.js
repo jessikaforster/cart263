@@ -1,4 +1,4 @@
-class Zombie {
+class Zombie2 {
   // Defining variables for zombies : LEVEL2
     constructor(x, y) {
       this.x = x;
@@ -14,25 +14,15 @@ move() {
     this.x += this.vx;
     this.y += this.vy;
 
+    let change = random(0, 1);
+    if (change < 0.05) {
+      this.vx = random(-this.speed, this.speed);
+      this.vy = random(-this.speed, this.speed);
+    }
+
     // Zombies will be unable to exit screen
     this.x = constrain(this.x, 0, width);
     this.y = constrain(this.y, 0, height);
-}
-
-mouseMovement() {
-  if (mouseX < this.x) {
-    this.vx = -this.speed;
-  }
-  else {
-    this.vx = this.speed;
-  }
-
-  if (mouseY < this.y) {
-    this.vy = -this.speed;
-  }
-  else {
-    this.vy = this.speed;
-  }
 }
 
   // Display zombies as red circles

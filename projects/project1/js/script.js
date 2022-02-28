@@ -40,7 +40,12 @@ let level2IntroImage;
 /* Declaring all images that will be used : LEVEL2 */
 let level2Image;
 let zombies = [];
-let numZombies = 5;
+let numZombies = 10;
+
+let zombies2 = [];
+let numZombies2 = 10;
+
+let user;
 
 /* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
@@ -95,12 +100,21 @@ function setup() {
 
     generateUserProfile();
 
+    user = new User;
+
     for (let i = 0; i < numZombies; i++) {
     let x = random(width / 2, width);
     let y = random(0, height);
     let zombie = new Zombie(x, y);
     zombies.push(zombie);
   }
+
+  for (let i = 0; i < numZombies2; i++) {
+  let x = random(width / 2, width);
+  let y = random(0, height);
+  let zombie2 = new Zombie2(x, y);
+  zombies2.push(zombie2);
+}
 }
 
 
@@ -152,12 +166,26 @@ function level2() {
   // Displaying level 2 image as background
     background(level2Image);
 
+
     for (let i = 0; i < zombies.length; i++) {
       let zombie = zombies[i];
       zombie.move();
       zombie.mouseMovement();
       zombie.display();
+      user.checkOverlap(zombie);
     }
+
+    for (let i = 0; i < zombies2.length; i++) {
+      let zombie2 = zombies2[i];
+      zombie2.move();
+      zombie2.display();
+      user.checkOverlap2(zombie2);
+    }
+
+  user.move();
+  user.mouseMovement();
+  user.display();
+
 }
 
 function level2Fail() {
