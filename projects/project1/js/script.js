@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `start`;
+let state = `level3`;
 /* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
@@ -48,13 +48,18 @@ let numZombies2 = 10;
 let user;
 
 // Timer
-let simulationTimer = 2000;
+let simulationTimer = 1500;
 
 /* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
 
 /* Declaring all images that will be used : LEVEL3 */
 let level3Image;
+
+let video;
+let modelName = `CocoSsd`;
+let cocossd;
+let predictions = [];
 
 /* Declaring all images that will be used : LEVEL3FAIL */
 let level3FailImage;
@@ -66,30 +71,30 @@ let level3SuccessImage;
 Description of preload
 */
 function preload() {
-// Loading images to be used into code : START
+  // Loading images to be used into code : START
   startImage = loadImage("assets/images/start.jpg");
-// Loading images to be used into code : LEVEL1
+  // Loading images to be used into code : LEVEL1
   level1Image = loadImage("assets/images/profilebg.jpg");
 
-// Loading JSON files
+  // Loading JSON files
   firstNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/firstNames.json`);
   lastNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/lastNames.json`);
   jobData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/occupations.json`);
   weaponData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`);
-  traitData = loadJSON (`https://raw.githubusercontent.com/dariusk/corpora/master/data/psychology/personality_test.json`);
+  traitData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/psychology/personality_test.json`);
 
-// Loading images to be used into code : LEVEL2INTRO
+  // Loading images to be used into code : LEVEL2INTRO
   level2IntroImage = loadImage("assets/images/moving.gif");
 
-// Loading images to be used into code : LEVEL2
+  // Loading images to be used into code : LEVEL2
   level2Image = loadImage("assets/images/train2.gif");
-// Loading images to be used into code : LEVEL2FAIL
+  // Loading images to be used into code : LEVEL2FAIL
   level2FailImage = loadImage("assets/images/train1.jpg");
-// Loading images to be used into code : LEVEL3
+  // Loading images to be used into code : LEVEL3
 
-// Loading images to be used into code : LEVEL3FAIL
+  // Loading images to be used into code : LEVEL3FAIL
   level3FailImage = loadImage("assets/images/danger.jpg");
-// Loading images to be used into code : LEVEL3SUCCESS
+  // Loading images to be used into code : LEVEL3SUCCESS
   level3SuccessImage = loadImage("assets/images/safety.jpg");
 }
 
@@ -99,13 +104,15 @@ Description of setup
 */
 function setup() {
   // Creating the canvas to fill the user's window size
-    createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);
 
-    generateUserProfile();
+  // Level 1
+  generateUserProfile();
 
-    user = new User;
+  // Level 2
+  user = new User;
 
-    for (let i = 0; i < numZombies; i++) {
+  for (let i = 0; i < numZombies; i++) {
     let x = random(width / 2, width);
     let y = random(0, height);
     let zombie = new Zombie(x, y);
@@ -113,11 +120,40 @@ function setup() {
   }
 
   for (let i = 0; i < numZombies2; i++) {
-  let x = random(width / 2, width);
-  let y = random(0, height);
-  let zombie2 = new Zombie2(x, y);
-  zombies2.push(zombie2);
+    let x = random(width / 2, width);
+    let y = random(0, height);
+    let zombie2 = new Zombie2(x, y);
+    zombies2.push(zombie2);
+  }
+
+// Level 3
+  // Start webcam and hide the resulting HTML element
+  video = createCapture(VIDEO);
+  video.hide();
+
+  // Start the CocoSsd model and when it's ready start detection
+  // and switch to the running state
+  cocossd = ml5.objectDetector('cocossd', {}, function() {
+    // Ask CocoSsd to start detecting objects, calls gotResults
+    // if it finds something
+    cocossd.detect(video, gotResults);
+  });
 }
+
+/**
+Called when CocoSsd has detected at least one object in the video feed
+*/
+function gotResults(err, results) {
+  // If there's an error, report it
+  if (err) {
+    console.error(err);
+  }
+  // Otherwise, save the results into our predictions array
+  else {
+    predictions = results;
+  }
+  // Ask CocoSsd to detect objects again so it's continuous
+  cocossd.detect(video, gotResults);
 }
 
 
@@ -146,44 +182,44 @@ function draw() {
 
 function start() {
   // Displaying starting image as background
-    background(startImage);
-    keyPressed();
+  background(startImage);
+  keyPressed();
 }
 
 function level1() {
   // Displaying level 1 image as background
-    background(level1Image);
+  background(level1Image);
 
   // Function to generate house plan variables
-    displayUserProfile();
-    keyPressed();
+  displayUserProfile();
+  keyPressed();
 }
 
 function level2Intro() {
   // Displaying level 2 image as background
-    background(level2IntroImage);
-    textLevel2Intro();
+  background(level2IntroImage);
+  textLevel2Intro();
 }
 
 function level2() {
   // Displaying level 2 image as background
-    background(level2Image);
+  background(level2Image);
 
 
-    for (let i = 0; i < zombies.length; i++) {
-      let zombie = zombies[i];
-      zombie.move();
-      zombie.mouseMovement();
-      zombie.display();
-      user.checkOverlap(zombie);
-    }
+  for (let i = 0; i < zombies.length; i++) {
+    let zombie = zombies[i];
+    zombie.move();
+    zombie.mouseMovement();
+    zombie.display();
+    user.checkOverlap(zombie);
+  }
 
-    for (let i = 0; i < zombies2.length; i++) {
-      let zombie2 = zombies2[i];
-      zombie2.move();
-      zombie2.display();
-      user.checkOverlap2(zombie2);
-    }
+  for (let i = 0; i < zombies2.length; i++) {
+    let zombie2 = zombies2[i];
+    zombie2.move();
+    zombie2.display();
+    user.checkOverlap2(zombie2);
+  }
 
   user.move();
   user.mouseMovement();
@@ -208,21 +244,35 @@ function level2() {
 
 function level2Fail() {
   // Displaying level 2 fail image as background
-    background(level2FailImage);
+  background(level2FailImage);
 }
 
 function level3() {
+  background(0);
 
+  // Display the webcam
+image(video, 0, 0, width/2, height/2);
+
+// Check if there currently predictions to display
+if (predictions) {
+  // If so run through the array of predictions
+  for (let i = 0; i < predictions.length; i++) {
+    // Get the object predicted
+    let object = predictions[i];
+    // Highlight it on the canvas
+    highlightObject(object);
+  }
+}
 }
 
 function level3Fail() {
   // Displaying level 3 fail image as background
-    background(level3FailImage);
+  background(level3FailImage);
 }
 
 function level3Success() {
   // Displaying level 3 success image as background
-    background(level3SuccessImage);
+  background(level3SuccessImage);
 }
 
 // Pressing a specific key triggers new state
@@ -235,15 +285,15 @@ function keyPressed() {
   }
   if (keyCode === 86) {
     if (state === `level1`) {
-    state = `level2Intro`;
+      state = `level2Intro`;
+    }
   }
-}
-if (keyCode === 83) {
-  if (state === `level2Intro`) {
-  state = `level2`;
-}
-}
-    // Pressing 'B' will trigger ResponsiveVoice to say instructions
+  if (keyCode === 83) {
+    if (state === `level2Intro`) {
+      state = `level2`;
+    }
+  }
+  // Pressing 'B' will trigger ResponsiveVoice to say instructions
   if (keyCode === 66) {
     responsiveVoice.speak("An announcement for all passengers: there are flesh eating monsters that have infiltrated the train, do your best to escape by using your mouse to move and dodge incoming zombies. Be sure to have your mouse on the left side of the screen. Press S to start");
   }
@@ -278,7 +328,7 @@ People say: ${userProfile.trait}
 
 PRESS B and V TO CONTINUE`;
 
-// Defining all text variables
+  // Defining all text variables
   push();
   textFont(`Rajdhani`);
   textSize(50);
@@ -297,5 +347,26 @@ function textLevel2Intro() {
   textStyle(BOLD);
   textAlign(CENTER, CENTER);
   text(`Listen to the announcement`, windowWidth / 2, windowHeight / 2);
+  pop();
+}
+
+// Level 3
+/**
+Provided with a detected object it draws a box around it and includes its
+label and confidence value
+*/
+function highlightObject(object) {
+  // Display a box around it
+  push();
+  noFill();
+  stroke(0, 255, 0);
+  rect(object.x, object.y, object.width, object.height);
+  pop();
+  // Display the label and confidence in the center of the box
+  push();
+  textSize(18);
+  fill(255, 255, 0);
+  textAlign(CENTER, CENTER);
+  text(`${object.label}, ${object.confidence.toFixed(2)}`, object.x + object.width / 2, object.y + object.height / 2);
   pop();
 }
