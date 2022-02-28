@@ -7,7 +7,7 @@ Project 1, mid-term CART 263 project. View README.md for artist's statement.
 
 "use strict";
 
-let state = `start`;
+let state = `level2`;
 /* Could be start, level1, level2intro, level2, level2Fail, level3, level3Fail, level3Success */
 
 /* Declaring all images that will be used : START */
@@ -39,6 +39,8 @@ let level2IntroImage;
 
 /* Declaring all images that will be used : LEVEL2 */
 let level2Image;
+let zombies = [];
+let numZombies = 5;
 
 /* Declaring all images that will be used : LEVEL2FAIL */
 let level2FailImage;
@@ -92,6 +94,13 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
 
     generateUserProfile();
+
+    for (let i = 0; i < numZombies; i++) {
+    let x = random(width / 2, width);
+    let y = random(0, height);
+    let zombie = new Zombie(x, y);
+    zombies.push(zombie);
+  }
 }
 
 
@@ -142,6 +151,13 @@ function level2Intro() {
 function level2() {
   // Displaying level 2 image as background
     background(level2Image);
+
+    for (let i = 0; i < zombies.length; i++) {
+      let zombie = zombies[i];
+      zombie.move();
+      zombie.mouseMovement();
+      zombie.display();
+    }
 }
 
 function level2Fail() {

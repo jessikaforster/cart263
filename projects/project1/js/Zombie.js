@@ -7,11 +7,19 @@ class Zombie {
       this.vy = 0;
       this.size = 30;
       this.speed = 3;
+  }
 
 move() {
   // Allowing zombies to move on x and y axis
     this.x += this.vx;
     this.y += this.vy;
+
+    let change = random(0, 1);
+    if (change < 0.05) {
+      this.vx = random(-this.speed, this.speed);
+      this.vy = random(-this.speed, this.speed);
+    }
+    
     // Zombies will be unable to exit screen
     this.x = constrain(this.x, 0, width);
     this.y = constrain(this.y, 0, height);
@@ -19,21 +27,20 @@ move() {
 
 mouseMovement() {
   if (mouseX < this.x) {
-    circle.vx = -1
+    this.vx = -1
   }
   else {
-    circle.vx = 1;
+    this.vx = 1;
   }
 
-  if (mouseY < circle.y) {
-    circle.vy = -1;
+  if (mouseY < this.y) {
+    this.vy = -1;
   }
   else {
-    circle.vy = 1;
+    this.vy = 1;
   }
 }
 
-display() {
   // Display zombies as red circles
   display() {
     push();
