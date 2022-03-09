@@ -13,22 +13,22 @@ function play() {
   audio.play();
 }
 
-$(`.top-secret`).on(`click`, redact);
+$(`.top-secret`).on(`click`, reveal);
 setInterval(revelation, 500);
 
-function redact(event) {
-  $(this).removeClass(`revealed`);
-  $(this).addClass(`redacted`);
+function reveal(event) {
+  $(this).removeClass(`redacted`);
+  $(this).addClass(`revealed`);
 }
 
 function revelation() {
-  $(`.redacted`).each(attemptReveal);
+  $(`.revealed`).each(attemptReveal);
 }
 
 function attemptReveal() {
   let r = Math.random();
   if (r < 0.1) {
-    $(this).removeClass(`redacted`);
-    $(this).addClass(`revealed`);
+    $(this).removeClass(`revealed`);
+    $(this).addClass(`redacted`);
   }
 }

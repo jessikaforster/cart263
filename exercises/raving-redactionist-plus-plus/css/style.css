@@ -27,11 +27,11 @@ p {
 }
 
 .redacted {
-  background-color: red;
+  background-color: white;
   user-select: none;
 }
 
 .revealed {
-  color: green;
+  color: red;
   text-decoration: underline;
 }
