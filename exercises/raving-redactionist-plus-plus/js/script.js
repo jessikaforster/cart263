@@ -8,6 +8,11 @@ author, and this description to match your project!
 
 "use strict";
 
+function play() {
+  var audio = new Audio('assets/sounds/music.wav');
+  audio.play();
+}
+
 $(`.top-secret`).on(`click`, redact);
 setInterval(revelation, 500);
 
