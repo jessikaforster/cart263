@@ -9,3 +9,8 @@
   background-color: black;
   user-select: none;
 }
+
+.revealed {
+  color: red;
+  text-decoration: underline;
+}
