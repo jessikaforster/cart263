@@ -1,5 +1,5 @@
 /**
-Raving Redactionist
+Raving Redactionist++
 Jessika Forster
 
 This is a template. You must fill in the title,
