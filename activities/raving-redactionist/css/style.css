@@ -1,7 +1,12 @@
+body {
+  background-color: black;
+}
+
 #secret-document {
   font-family: monospace;
   font-size: 1.25rem;
   width: 50vw;
+  color: white;
   margin: auto;
 }
 
