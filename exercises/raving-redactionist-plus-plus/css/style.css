@@ -1,7 +1,9 @@
+/* Black background */
 body {
   background-color: black;
 }
 
+/* Editing text variables */
 #secret-document {
   font-family: monospace;
   font-size: 2rem;
@@ -10,33 +12,39 @@ body {
   margin: auto;
 }
 
+/* Editing h2 text font and position */
 h2 {
   font-family: 'Syne Mono', monospace;
   text-align: center;
 }
 
+/* Editing h3 text font, colour and position */
 h3 {
   font-family: 'Syne Mono', monospace;
   text-align: center;
   color: red;
 }
 
+/* Editing button */
 button {
   text-align: center;
   font-size: 2.2rem;
   font-family: 'Syne Mono', monospace;
 }
 
+/* Editing all text */
 p {
   text-align: center;
   font-family: 'Syne Mono', monospace;
 }
 
+/* Covering letters in white */
 .redacted {
   background-color: white;
   user-select: none;
 }
 
+/* Revealed letters are red */
 .revealed {
   color: red;
 }
