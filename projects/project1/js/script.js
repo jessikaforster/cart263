@@ -80,7 +80,7 @@ function preload() {
   // Loading images to be used into code : LEVEL1
   level1Image = loadImage("assets/images/profilebg.jpg");
 
-/* --> Used 'Spy profile generator' exercise as reference <-- */
+  /* --> Used 'Spy profile generator' exercise as reference <-- */
   // Loading JSON files
   firstNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/firstNames.json`);
   lastNameData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/lastNames.json`);
@@ -106,7 +106,7 @@ function setup() {
   // Creating the canvas to fill the user's window size
   createCanvas(windowWidth, windowHeight);
 
-/* --> Used 'Spy profile generator' exercise as reference <-- */
+  /* --> Used 'Spy profile generator' exercise as reference <-- */
   // Function to generate random profile
   generateUserProfile();
 
@@ -129,7 +129,7 @@ function setup() {
     zombies2.push(zombie2);
   }
 
-  /* Setup for level 3*/
+  /* Setup for level 3 */
   /* --> Used '5.2. ml5.js: ObjectDetector' video as reference <-- */
   // Start webcam and hide the resulting HTML element
   video = createCapture(VIDEO);
@@ -198,7 +198,7 @@ function start() {
 function level1() {
   // Displaying level 1 image as background
   background(level1Image);
-  // Function to generate house plan variables
+  // Function to generate passenger profile variables
   displayUserProfile();
   // Pressing V will trigger `level2Intro`
   keyPressed();
@@ -281,7 +281,7 @@ function level3Intro() {
 function level3() {
   background(0);
 
-/* --> Used '5.2. ml5.js: ObjectDetector' video as reference <-- */
+  /* --> Used '5.2. ml5.js: ObjectDetector' video as reference <-- */
   // Display the webcam
   image(video, 0, 0, width / 2, height / 2);
 

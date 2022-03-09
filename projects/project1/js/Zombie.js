@@ -20,7 +20,7 @@ class Zombie {
     this.y = constrain(this.y, 0, height);
   }
 
-/* --> Used '4.7. Movement' video as reference <-- */
+  /* --> Used '4.7. Movement' video as reference <-- */
   // Zombies will follow mouse movement
   mouseMovement() {
     if (mouseX < this.x) {
