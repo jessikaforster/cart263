@@ -15,6 +15,12 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-family: 'Syne Mono', monospace;
+  text-align: center;
+  color: red;
+}
+
 button {
   text-align: center;
   font-size: 2.2rem;
@@ -33,5 +39,4 @@ p {
 
 .revealed {
   color: red;
-  text-decoration: underline;
 }
