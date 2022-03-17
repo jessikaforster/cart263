@@ -2,7 +2,7 @@ body {
   background-color: #c77848;
   color: #ffe8c7;
   border-style: dotted;
-  border-color: #7da18d;
+  border-color: #c2583e;
   border-width: 20px;
   padding-bottom: 30px;
 }
@@ -24,5 +24,5 @@ body {
 }
 
 .found {
-  color: #c2583e;
+  color: #7da18d;
 }
