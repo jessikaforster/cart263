@@ -10,5 +10,7 @@ author, and this description to match your project!
 
 $(`.secret`).one(`mouseover`, function (event) {
   $(this).addClass(`found`, 500);
-  $(this).draggable();
+  $(this).draggable({
+    helper: `clone`
+  });
 });
