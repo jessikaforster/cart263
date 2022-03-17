@@ -2,8 +2,7 @@
 Code Taker
 Jessika Forster
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Game to figure out the secret word
 */
 
 "use strict";
@@ -17,7 +16,7 @@ $(`#solved-dialog`).dialog({
   }
 });
 
-$(`.secret`).one(`mouseover`, function (event) {
+$(`.secret`).one(`mouseover`, function(event) {
   $(this).addClass(`found`, 500);
   $(this).draggable({
     helper: `clone`
