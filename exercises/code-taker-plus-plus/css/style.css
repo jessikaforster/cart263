@@ -1,16 +1,28 @@
+body {
+  background-color: #c77848;
+  color: #ffe8c7;
+  border-style: dotted;
+  border-color: #7da18d;
+  border-width: 20px;
+  padding-bottom: 30px;
+}
+
 #poem {
+  font-family: fantasy;
   font-size: 2rem;
   text-align: center;
 }
 
 #answer {
   text-align: center;
-  width: 10rem;
-  height: 2rem;
+  width: 20rem;
+  height: 4rem;
   margin: auto;
-  border: 1px dashed black;
+  border-style: outset;
+  border-color: #ffc96b;
+  border-width: 20px;
 }
 
 .found {
-  color: red;
+  color: #c2583e;
 }
