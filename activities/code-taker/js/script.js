@@ -9,7 +9,7 @@ author, and this description to match your project!
 "use strict";
 
 $(`#solved-dialog`).dialog({
-  autoOpen: false, 
+  autoOpen: false,
   button: {
     "I know.": function() {
       $(this).dialog(`close`);
@@ -30,5 +30,9 @@ $(`#answer`).droppable({
     $(this).append(letter);
     ui.draggable.draggable(`disable`);
     ui.draggable.removeClass(`found`);
+    // Check if they got it
+    if ($(this).text() === `Theremin`) {
+      $(`#solved-dialog`).dialog(`open`);
+    }
   }
 });
