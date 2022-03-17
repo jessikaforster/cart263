@@ -1,18 +1,22 @@
+/* Orange background, editing text colour, position and border */
 body {
   background-color: #c77848;
   color: #ffe8c7;
   border-style: dotted;
   border-color: #c2583e;
   border-width: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
+/* Editing poem text font and position */
 #poem {
   font-family: fantasy;
   font-size: 2rem;
+  padding-top: 30px;
   text-align: center;
 }
 
+/* Editing answer text font, border and position */
 #answer {
   text-align: center;
   width: 20rem;
@@ -23,6 +27,7 @@ body {
   border-width: 20px;
 }
 
+/* Colour of text when hovered over */
 .found {
   color: #7da18d;
 }

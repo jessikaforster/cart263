@@ -1,12 +1,14 @@
 /**
-Code Taker
+Code Taker++
 Jessika Forster
 
-Game to figure out the secret word
+I used a poem from one of my favourite shows and the word that must be
+found is the name of the character's first love.
 */
 
 "use strict";
 
+// Closing popup
 $(`#solved-dialog`).dialog({
   autoOpen: false,
   button: {
@@ -16,6 +18,7 @@ $(`#solved-dialog`).dialog({
   }
 });
 
+// Mouseover letter in secret word will make it change colour
 $(`.secret`).one(`mouseover`, function(event) {
   $(this).addClass(`found`, 500);
   $(this).draggable({
@@ -23,6 +26,7 @@ $(`.secret`).one(`mouseover`, function(event) {
   });
 });
 
+// Letters in secret word are drag and droppable
 $(`#answer`).droppable({
   drop: function(event, ui) {
     let letter = ui.draggable.text();
