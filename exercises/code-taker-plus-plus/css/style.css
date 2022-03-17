@@ -1,10 +1,13 @@
 #poem {
   font-size: 2rem;
+  text-align: center;
 }
 
 #answer {
+  text-align: center;
   width: 10rem;
   height: 2rem;
+  margin: auto;
   border: 1px dashed black;
 }
 
