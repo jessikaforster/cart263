@@ -1,6 +1,12 @@
-/*********************************************
+body {
+  background-color: #e8feff;
+  font-family: 'Inconsolata', monospace;
+}
 
-Here is a description of any special CSS used.
-By default that's nothing.
+h2 {
+font-family: 'Inconsolata', monospace;
+}
 
-**********************************************/
+h1 {
+  font-family: 'Inconsolata', monospace;
+}
