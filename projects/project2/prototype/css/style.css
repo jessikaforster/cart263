@@ -1,24 +1,28 @@
+/* Background is a very light blue */
 body {
   background-color: #e8feff;
 }
 
+/* Text font and size */
 #reading {
   font-family: 'Inconsolata', monospace;
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
+/* Title font, alignment and size */
 h2 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
   font-size: 3.5rem;
 }
 
+/* Title font, alignment and size */
 h1 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
 }
 
-/* Colour of highlighted text when hovered over */
+/* Colour of highlighted text when hovered over (yellow) */
 .found {
   background-color: #f2ff00;
 }
