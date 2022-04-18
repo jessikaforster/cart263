@@ -10,18 +10,6 @@ paragraph.
 
 "use strict";
 
-function preload() {
-
-}
-
-function setup() {
-
-}
-
-function draw() {
-  
-}
-
 // When mouse hovers over specific words they will be highlighted
 $(`.answer`).one(`mouseover`, function(event) {
   $(this).addClass(`found`, 500);

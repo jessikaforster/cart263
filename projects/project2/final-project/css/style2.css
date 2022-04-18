@@ -1,0 +1,50 @@
+body {
+  background-color: #9c9c9c;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Title font, alignment and size */
+h2 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Title font, alignment and size */
+h1 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: 'Inconsolata', monospace;
+  text-align: left;
+  font-size: 2rem;
+  color: #9c9c9c;
+}
+
+h4 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 2rem;
+  color: #9c9c9c;
+}
+
+h5 {
+  font-family: 'Inconsolata', monospace;
+  text-align: right;
+  font-size: 2rem;
+  color: #9c9c9c;
+}
+
+/* Colour of text when hovered over */
+.found {
+  color: #000000;
+}
