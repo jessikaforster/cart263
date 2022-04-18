@@ -1,9 +1,5 @@
 body {
-text-align: center;
-font-family: 'Inconsolata', monospace;
-font-size: 4rem;
-display: contents;
-padding-bottom: 100px;
+background-color: #e0f1ff;
 }
 
 img {
@@ -20,19 +16,47 @@ img {
 }
 
 /* Title font, alignment and size */
+h1 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+}
+
+/* Title font, alignment and size */
 h2 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
   font-size: 3.5rem;
 }
 
-/* Title font, alignment and size */
-h1 {
-  font-family: 'Inconsolata', monospace;
+h3 {
   text-align: center;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.5rem;
+  display: contents;
+  padding-bottom: 100px;
 }
 
 /* Colour of highlighted text when hovered over (yellow) */
 .found {
   background-color: #f2ff00;
+}
+
+/* unvisited link */
+a:link {
+  color: #000000;
+}
+
+/* visited link */
+a:visited {
+  color: #000000;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000000;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
 }
