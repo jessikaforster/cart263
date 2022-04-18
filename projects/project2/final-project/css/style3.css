@@ -1,0 +1,55 @@
+body {
+  background-color: #8fceff;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+/* Title font, alignment and size */
+h2 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Title font, alignment and size */
+h1 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* unvisited link */
+a:link {
+  color: #000000;
+}
+
+/* visited link */
+a:visited {
+  color: #000000;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000000;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
+}
+
+/* Editing answer text font, border and position */
+#answer {
+  text-align: center;
+  width: 20rem;
+  height: 4rem;
+  margin: auto;
+  border-style: outset;
+  border-color: #ffffff;
+  border-width: 20px;
+}

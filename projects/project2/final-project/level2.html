@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style3.css" />
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css" />
+
+  <!-- Library script(s) go here -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>
+    You arrived at school successfully!
+  </h1>
+
+  <h2>
+    The first 4 numbers from left to right at the top of the last page are the code to unlock your locker.
+  </h2>
+  <h2>
+    Drag and drop the numbers into the box to <a href="level3.html">continue</a>.
+  </h2>
+
+<img src="assets/images/lock.png" alt="lock">
+<section id=numbers">
+<h2>
+<span class="secret">1</span> <span class="secret">2</span> 3 <span class="secret">4</span> <span class="secret">5</span> 6 7 8 9 0
+</h2>
+</section>
+
+<section id="answer"></section>
+
+  <div id="solved-dialog" title="Y/N">
+    <p>
+      Correct! Click continue to move on
+    </p>
+  </div>
+
+  <!-- My script(s) -->
+  <script src="js/script3.js"></script>
+</body>
+
+</html>
