@@ -1,0 +1,64 @@
+/* For Level 4 */
+
+body {
+  background-color: #000000;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: fixed;
+}
+
+/* Title font, alignment and size */
+h1 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 2rem;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Title font, alignment and size */
+h2 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  position: absolute;
+}
+
+/* unvisited link */
+a:link {
+  color: #ffffff;
+}
+
+/* visited link */
+a:visited {
+  color: #ffffff;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ffffff;
+}
+
+/* selected link */
+a:active {
+  color: #ffffff;
+}
+
+/* Editing answer text font, border and position */
+#answer {
+  text-align: center;
+  width: 20rem;
+  height: 4rem;
+  margin: auto;
+  color: #ffffff;
+  border-style: outset;
+  border-color: #ff6947;
+  border-width: 20px;
+  position: relative;
+}
