@@ -1,9 +1,11 @@
-/* For Level 4 */
+/* STYLE FOR LEVEL 4 */
 
+/* Black background */
 body {
   background-color: #000000;
 }
 
+/* School supplies image position and size */
 img {
   display: block;
   margin-left: auto;
@@ -12,7 +14,7 @@ img {
   position: fixed;
 }
 
-/* Title font, alignment and size */
+/* Title font, alignment, color (white) and size */
 h1 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
@@ -21,7 +23,7 @@ h1 {
   position: relative;
 }
 
-/* Title font, alignment and size */
+/* Title font, alignment, color (white) and size */
 h2 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
@@ -30,27 +32,27 @@ h2 {
   position: relative;
 }
 
-/* unvisited link */
+/* Unvisited link in black */
 a:link {
   color: #ffffff;
 }
 
-/* visited link */
+/* Visited link in black */
 a:visited {
   color: #ffffff;
 }
 
-/* mouse over link */
+/* Mouse over link in black */
 a:hover {
   color: #ffffff;
 }
 
-/* selected link */
+/* Selected link in black */
 a:active {
   color: #ffffff;
 }
 
-/* Editing answer text font, border and position */
+/* Editing answer text font, border (red), color (white) and position */
 #answer {
   text-align: center;
   width: 20rem;

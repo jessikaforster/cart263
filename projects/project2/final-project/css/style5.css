@@ -1,9 +1,11 @@
-/* For Level 5 */
+/* STYLE FOR LEVEL 5 */
 
+/* Black background */
 body {
   background-color: #000000;
 }
 
+/* School supplies image position and size */
 img {
   display: block;
   margin-left: auto;
@@ -12,7 +14,7 @@ img {
   position: fixed;
 }
 
-/* Title font, alignment and size */
+/* Title font, alignment, color (black) and size */
 h1 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
@@ -20,7 +22,7 @@ h1 {
   color: #ffffff;
 }
 
-/* Title font, alignment and size */
+/* Title font, alignment, color (black) and size */
 h2 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
@@ -29,22 +31,22 @@ h2 {
   position: relative;
 }
 
-/* unvisited link */
+/* Unvisited link in black */
 a:link {
   color: #ffffff;
 }
 
-/* visited link */
+/* Visited link in black */
 a:visited {
   color: #ffffff;
 }
 
-/* mouse over link */
+/* Mouse over link in black */
 a:hover {
   color: #ffffff;
 }
 
-/* selected link */
+/* Selected link in black */
 a:active {
   color: #ffffff;
 }

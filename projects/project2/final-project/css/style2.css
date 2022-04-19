@@ -1,9 +1,11 @@
-/* For Level 1 */
+/* STYLE FOR LEVEL 1 */
 
+/* Grey background */
 body {
   background-color: #9c9c9c;
 }
 
+/* Bus image position and size */
 img {
   display: block;
   margin-left: auto;
@@ -11,20 +13,21 @@ img {
   width: 50%;
 }
 
-/* Title font, alignment and size */
-h2 {
-  font-family: 'Inconsolata', monospace;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-/* Title font, alignment and size */
+/* Text font, alignment and size */
 h1 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
   font-size: 2rem;
 }
 
+/* Text font, alignment and size */
+h2 {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Number on top left and bottom left, grey */
 h3 {
   font-family: 'Inconsolata', monospace;
   text-align: left;
@@ -32,6 +35,7 @@ h3 {
   color: #9c9c9c;
 }
 
+/* Middle number on top and bottom, grey */
 h4 {
   font-family: 'Inconsolata', monospace;
   text-align: center;
@@ -39,6 +43,7 @@ h4 {
   color: #9c9c9c;
 }
 
+/* Number on top right and bottom right, grey */
 h5 {
   font-family: 'Inconsolata', monospace;
   text-align: right;
@@ -46,28 +51,28 @@ h5 {
   color: #9c9c9c;
 }
 
-/* Colour of text when hovered over */
+/* Colour of text when hovered over (black) */
 .found {
   color: #000000;
 }
 
-/* unvisited link */
+/* Unvisited link in black */
 a:link {
   color: #9c9c9c;
 }
 
-/* visited link */
+/* Visited link in black */
 a:visited {
   color: #9c9c9c;
 }
 
-/* mouse over link */
+/* Mouse over link in black */
 a:hover {
   color: #000000;
   text-decoration: none;
 }
 
-/* selected link */
+/* Selected link in black */
 a:active {
   color: #9c9c9c;
 }

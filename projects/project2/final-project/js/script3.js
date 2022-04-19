@@ -1,3 +1,9 @@
+/**
+
+JavaScript for LEVEL 2
+
+*/
+
 "use strict";
 
 // Closing popup
@@ -10,22 +16,21 @@ $(`#solved-dialog`).dialog({
   }
 });
 
-// Mouseover letter in secret word will make it change colour
+// Numbers can be clicked on and moved
 $(`.secret`).one(`mouseover`, function(event) {
-  $(this).addClass(`found`, 500);
   $(this).draggable({
     helper: `clone`
   });
 });
 
-// Letters in secret word are drag and droppable
+// Numbers in lock code are drag and droppable
 $(`#answer`).droppable({
   drop: function(event, ui) {
     let letter = ui.draggable.text();
     $(this).append(letter);
     ui.draggable.draggable(`disable`);
     ui.draggable.removeClass(`found`);
-    // Check if they got it
+    // Check if user got the correct answer
     if ($(this).text() === `1245`) {
       $(`#solved-dialog`).dialog(`open`);
     }

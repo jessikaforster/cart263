@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <title>PROJECT 2</title>
+  <title>PROJECT 2</title>
 
   <!-- CSS stylesheet(s) -->
   <link rel="stylesheet" type="text/css" href="css/style4.css" />
@@ -21,6 +21,8 @@
 
 <body>
 
+  <!-- Level instructions -->
+
   <h1>
     Do you remember all of the highlighted words?
   </h1>
@@ -32,27 +34,35 @@
     Drag and drop the letters into the box below to spell it out and <a href="level5.html">continue</a> playing.
   </h2>
 
-  <section id=letters">
-  <h2>
-  <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x y z
-  </h2>
-  <h2>
-  <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x y z
-  </h2>
-  <h2>
-  <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x y z
-  </h2>
-</section>
+  <!-- Letters to be dragged -->
 
+  <section id=letters">
+    <h2>
+      <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x
+      y z
+    </h2>
+    <h2>
+      <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x
+      y z
+    </h2>
+    <h2>
+      <span class="secret">a</span> <span class="secret">b</span> c d <span class="secret">e</span> f g h i j k <span class="secret">l</span> <span class="secret">m</span> n <span class="secret">o</span> p q <span class="secret">r</span> s t u v w x
+      y z
+    </h2>
+  </section>
+
+  <!-- Area for answer -->
   <section id="answer"></section>
 
-    <div id="solved-dialog" title="Y/N">
-      <p>
-        Correct! Click continue to move on
-      </p>
-    </div>
+  <!-- Pop-up when correct answer is inputted -->
+  <div id="solved-dialog" title="Y/N">
+    <p>
+      Correct! Click continue to move on
+    </p>
+  </div>
 
-    <img src="assets/images/level4.jpg" alt="Level 4">
+  <!-- Image of school supplies -->
+  <img src="assets/images/level4.jpg" alt="Level 4">
 
   <!-- My script(s) -->
   <script src="js/script4.js"></script>
