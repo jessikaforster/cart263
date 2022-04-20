@@ -4,7 +4,6 @@ JavaScript for LEVEL 4
 
 */
 
-
 "use strict";
 
 /*  Used 'Code Taker' activity as reference */
@@ -19,7 +18,7 @@ $(`#solved-dialog`).dialog({
   }
 });
 
-// Numbers can be clicked on and moved
+// Letters can be clicked on and moved
 $(`.secret`).one(`mouseover`, function(event) {
   $(this).draggable({
     helper: `clone`
