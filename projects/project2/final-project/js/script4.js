@@ -7,6 +7,8 @@ JavaScript for LEVEL 4
 
 "use strict";
 
+/*  Used 'Code Taker' activity as reference */
+
 // Closing popup
 $(`#solved-dialog`).dialog({
   autoOpen: false,
